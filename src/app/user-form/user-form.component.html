@@ -1,0 +1,31 @@
+<div class="container">
+  <h1>User Form</h1>
+  <form #userForm="ngForm">
+    {{diagnostic}}
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" [(ngModel)]="model.name" name="name" required>
+      TODO: remove this: {{model.name}}
+
+    </div>
+
+    <div class="form-group">
+      <label for="billName">billName</label>
+      <input type="text" class="form-control" id="billName" [(ngModel)]="model.billName" name="billName" required #spy>
+      <br>TODO: remove this: {{spy.className}}
+    </div>
+    <div class="form-group">
+      <label for="currentDate">currentDate</label>
+      <input type="text" class="form-control" id="currentDate" [(ngModel)]="model.currentDate" name="currentDate" >
+    </div>
+    <div class="form-group">
+      <label for="amount">amount</label>
+      <input type="text" class="form-control" id="amount" [(ngModel)]="model.amount" name="amount" >
+    </div>
+
+    <div class="form-group">
+      <input type="file" name="photo" ng2FileSelect [uploader]="uploader"/>
+    </div>
+    <button type="submit" class="btn btn-success" [disabled]="keepDisabledUntil" (click)="uploadAllData()">Submit</button>
+  </form>
+</div>
